@@ -150,6 +150,8 @@
 
                         'Get-ITGlueCountries',
 
+
+                        'Get-ITGlueDocuments',
                         'Set-ITGlueDocuments',
 
                         'Get-ITGlueDomains',
