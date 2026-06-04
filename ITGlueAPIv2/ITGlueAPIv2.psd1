@@ -73,6 +73,7 @@
                     'Internal/APIKey.ps1',
                     'Internal/ModuleSettings.ps1',
                     'Resources/Attachments.ps1',
+                    'Resources/Checklists/ps1',
                     'Resources/ConfigurationInterfaces.ps1',
                     'Resources/Configurations.ps1',
                     'Resources/ConfigurationStatuses.ps1',
@@ -117,6 +118,9 @@
                         'New-ITGlueAttachments',
                         'Set-ITGlueAttachments',
                         'Remove-ITGlueAttachments',
+
+                        'Get-ITGlueCheckLists',
+                        'Get-ITGlueCheckListItems',
 
                         'New-ITGlueConfigurationInterfaces',
                         'Get-ITGlueConfigurationInterfaces',
