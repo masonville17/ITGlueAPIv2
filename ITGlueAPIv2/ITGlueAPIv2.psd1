@@ -73,7 +73,7 @@
                     'Internal/APIKey.ps1',
                     'Internal/ModuleSettings.ps1',
                     'Resources/Attachments.ps1',
-                    'Resources/Checklists/ps1',
+                    'Resources/Checklists.ps1',
                     'Resources/ConfigurationInterfaces.ps1',
                     'Resources/Configurations.ps1',
                     'Resources/ConfigurationStatuses.ps1',
@@ -96,6 +96,7 @@
                     'Resources/OrganizationStatuses.ps1',
                     'Resources/OrganizationTypes.ps1',
                     'Resources/PasswordCategories.ps1',
+                    'Resources/PasswordFolders.ps1',
                     'Resources/Passwords.ps1',
                     'Resources/Platforms.ps1',
                     'Resources/Regions.ps1',
@@ -119,8 +120,11 @@
                         'Set-ITGlueAttachments',
                         'Remove-ITGlueAttachments',
 
-                        'Get-ITGlueCheckLists',
-                        'Get-ITGlueCheckListItems',
+                        'Get-ITGlueChecklists',
+                        'Get-ITGlueChecklistItems',
+                        'Get-ITGlueChecklistTemplates',
+                        'Get-ITGlueChecklistTemplateItems',
+
 
                         'New-ITGlueConfigurationInterfaces',
                         'Get-ITGlueConfigurationInterfaces',
@@ -150,6 +154,7 @@
 
                         'Get-ITGlueCountries',
 
+                        'Get-ITGluePasswordFolders',
 
                         'Get-ITGlueDocuments',
                         'Set-ITGlueDocuments',
