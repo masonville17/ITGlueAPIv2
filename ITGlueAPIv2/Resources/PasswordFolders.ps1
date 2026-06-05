@@ -54,7 +54,10 @@ function Get-ITGluePasswordFolders {
             if ($data.Count -gt 0) { $folders += $data }
 
             if ($null -eq $totalPages -and $resp.meta -and $resp.meta.pagination) {
-                $totalPagesRaw = $resp.meta.pagination.'total-pages' ?? $resp.meta.pagination.total_pages
+                $totalPagesRaw = $resp.meta.pagination.'total-pages'
+                if ($null -eq $totalPagesRaw) {
+                    $totalPagesRaw = $resp.meta.pagination.total_pages
+                }
                 if ($totalPagesRaw) { $totalPages = [int]$totalPagesRaw }
             }
 
