@@ -1,9 +1,6 @@
 function Get-ITGPasswordFolders {
     [CmdletBinding()]
     Param (
-        [Parameter(Mandatory = $true)]
-        [String]$ITGKey,
-
         [Parameter()]
         [Nullable[Int64]]$organization_id = $null,
 
@@ -28,7 +25,7 @@ function Get-ITGPasswordFolders {
     #"Bearer $ITGKey"
     # ->
     #x-api-key: {{api-token}}
-    $headers = @{ "x-api-key" = "$ITGKey" }
+    
     function New-ITGPasswordFolderUri {
         param(
             [string]$BaseUri,
@@ -49,9 +46,10 @@ function Get-ITGPasswordFolders {
     $page = 1
     $totalPages = $null
     try {
+        $ITGlue_Headers = @{ "x-api-key" = "$ITGKey" }
         do {
             $uri = New-ITGPasswordFolderUri -BaseUri $ITGlue_Base_URI -ResourceUri $resource_uri -PageNumber $page -PageSize $PageSize
-            $resp = Invoke-RestMethod -Method GET -Uri $uri -Headers $headers -ErrorAction Stop
+            $resp = Invoke-RestMethod -Method GET -Uri $uri -Headers $ITGlue_Headers -ErrorAction Stop
             $data = if ($resp -and $resp.data) { @($resp.data) } else { @() }
             if ($data.Count -gt 0) { $folders += $data }
 
@@ -68,6 +66,8 @@ function Get-ITGPasswordFolders {
     } catch {
         Write-Error "Failed to retrieve ITGlue password folders on page $page`: $($_.Exception.Message)"
         return
+    } finally {
+        [void] ($ITGlue_Headers.Remove('x-api-key')) # Quietly clean up scope so the API key doesn't persist
     }
 
     if (-not $ComputePaths) { return $folders }
