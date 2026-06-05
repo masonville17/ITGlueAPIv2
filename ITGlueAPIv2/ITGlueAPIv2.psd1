@@ -96,6 +96,7 @@
                     'Resources/OrganizationStatuses.ps1',
                     'Resources/OrganizationTypes.ps1',
                     'Resources/PasswordCategories.ps1',
+                    'Resources/PasswordFolders.ps1',
                     'Resources/Passwords.ps1',
                     'Resources/Platforms.ps1',
                     'Resources/Regions.ps1',

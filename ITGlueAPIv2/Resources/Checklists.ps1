@@ -21,7 +21,7 @@
     This endpoint requires a JWT token, not an API key. Ensure the token is valid and not expired.
 #>
 
-function Get-ITGlueCheckLists {
+function Get-ITGlueChecklists {
     [CmdletBinding(DefaultParameterSetName = 'index')]
     Param (
         [Parameter(Mandatory = $true)]
