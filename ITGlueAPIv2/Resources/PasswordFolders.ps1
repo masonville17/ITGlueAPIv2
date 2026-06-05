@@ -1,4 +1,4 @@
-function Get-ITGPasswordFolders {
+function Get-ITGluePasswordFolders {
     [CmdletBinding()]
     Param (
         [Parameter()]
