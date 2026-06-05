@@ -46,7 +46,7 @@ function Get-ITGPasswordFolders {
     $page = 1
     $totalPages = $null
     try {
-        $ITGlue_Headers = @{ "x-api-key" = "$ITGKey" }
+        $ITGlue_Headers.Add('x-api-key', (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList 'N/A', $ITGlue_API_Key).GetNetworkCredential().Password)
         do {
             $uri = New-ITGPasswordFolderUri -BaseUri $ITGlue_Base_URI -ResourceUri $resource_uri -PageNumber $page -PageSize $PageSize
             $resp = Invoke-RestMethod -Method GET -Uri $uri -Headers $ITGlue_Headers -ErrorAction Stop
