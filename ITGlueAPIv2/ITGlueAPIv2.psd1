@@ -120,7 +120,10 @@
                         'Remove-ITGlueAttachments',
 
                         'Get-ITGlueCheckLists',
-                        'Get-ITGlueCheckListItems',
+                        'Get-ITGlueChecklistItems',
+                        'Get-ITGlueChecklistTemplates',
+                        'Get-ITGlueChecklistTemplateItems',
+
 
                         'New-ITGlueConfigurationInterfaces',
                         'Get-ITGlueConfigurationInterfaces',
@@ -150,6 +153,7 @@
 
                         'Get-ITGlueCountries',
 
+                        'Get-ITGPasswordFolders',
 
                         'Get-ITGlueDocuments',
                         'Set-ITGlueDocuments',
